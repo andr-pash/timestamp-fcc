@@ -1,0 +1,29 @@
+html,
+body,
+h1,
+h2,
+h3 {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.cont {
+  width: 75vw;
+  margin: 25vh auto;
+  padding: 10px;
+  background: rgb(191, 226, 236);
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.title::after {
+  content: '';
+  margin-left: 20px;
+  margin-top: 5px;
+  display: block;
+  width: 35%;
+  height: 2px;
+  background-color: black
+
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Timestamp Microservice</title>
+  <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+  <div class="cont">
+    <h1 class="title">Timestamp Microservice</h1>
+    <p>Provide a Timestamp in Unix or natural format as an extension to the URL.</p>
+    <p><strong>Example:</strong></p>
+    <code>http.//xyz/api/December%2015,%202015</code> <br>
+    <code>http.//xyz/api/1450137600</code>
+    <p><strong>Server response:</strong></p>
+    <code>{ "unix": 1450137600, "natural": "December 15, 2015" }</code> <br>
+  </div>
+</body>
+
+</html>
