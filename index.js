@@ -4,7 +4,7 @@ var app = express();
 
 app.use(express.static('./public'));
 
-app.get('/api/:str', function(req, res) {
+app.get('/api/:str', function (req, res) {
   var str = req.params.str;
   var unix,
     natural,
@@ -16,11 +16,18 @@ app.get('/api/:str', function(req, res) {
     natural: null
   };
 
+  var options = {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  };
+
   // if Date is passed as unix
   if (!isNaN(parseInt(str, 10))) {
     unix = Number(str);
     date = new Date(unix);
-    natural = date.toDateString();
+    natural = date.toLocaleDateString('en-US', options);
     if (natural !== 'Invalid Date') {
       obj.unix = unix;
       obj.natural = natural;
@@ -33,8 +40,8 @@ app.get('/api/:str', function(req, res) {
 
     date = new Date(str);
     unix = date.getTime();
-    natural = date.toDateString();
-    if(natural !== 'Invalid Date'){
+    natural = date.toLocaleDateString('en-US', options);
+    if (natural !== 'Invalid Date') {
       obj.unix = unix;
       obj.natural = natural;
     }
